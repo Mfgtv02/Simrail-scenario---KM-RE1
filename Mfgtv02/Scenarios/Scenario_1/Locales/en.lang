@@ -1,8 +1,11 @@
-LuaText=Hello there
-LuaText2=Ah, a lua mission!
 
-CallTheStationToEnter=Call station dispatcher.
-EnterTheStationIgnoringStopSignal=Enter the station ignoring stop signal.
+0=<color="grey">[Conductor]</color> <color="white">19962 ready to depart</color>
 
-NowExitVehicle=Now, exit the vehicle.
-EnterOtherTrainset=Enter to the other train.
+1=<color="yellow">[19962]</color> <color="white">19962 ready to maneuver to the platforms</color>
+2=<color="red">[Dispatcher]</color> <color="white">19962 shunting signal displayed</color>
+
+3=<color="red">[Dispatcher]</color> <color="white">19962, we will proceed to the zachodnia on a substitute signal due to a failure of the control devices</color>
+4=<color="yellow">[19962]</color> <color="white">Understood</color>
+
+5=<color="yellow">[19962]</color> <color="white">19962 at the entry signal</color>
+6=<color="red">[Dispatcher]</color> <color="white">19962, I will set the route shortly</color>

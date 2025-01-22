@@ -78,7 +78,6 @@ function StartScenario()
         check = UnconditialCheck,
         result = function(e)
             CreateCoroutine(function()
-                Log("Wyjazd z wsd podany")
                 coroutine.yield(CoroutineYields.WaitForTrainsetPassengerExchangeFinished, RailstockGetPlayerTrainset(), TimeSpanCreate(0, 0, 0, 20, 0))
                 VDSetRouteWithVariant("WSD_J10", "WSD_Akps", VDOrderType.TrainRoute, {
                     GetMidPointVariant("WSD_12cd", true),
@@ -90,6 +89,8 @@ function StartScenario()
                     GetMidPointVariant("WSD_2", false),
                     GetMidPointVariant("z1333", true)
                 })                
+                coroutine.yield(CoroutineYields.WaitForSeconds, 17)
+                DisplayChatText("0")
             end)
         end
     })
@@ -110,40 +111,173 @@ CreateSignalTrigger(FindSignal("WDC_H"), 1500, {
     result = function(e)
         CreateCoroutine(function()
             coroutine.yield(CoroutineYields.WaitForTrainsetPassengerExchangeFinished, RailstockGetPlayerTrainset(), TimeSpanCreate(0, 0, 0, 30, 0))
-            DisplayChatText("Dyzurny: 19962 do zachodniej będziemy jechać na zatępczy z powodu awarii urządzeń sterujacych")   
+            DisplayChatText("3")   
             coroutine.yield(CoroutineYields.WaitForSeconds, 5)
-            DisplayChatText("19962: Zrozumiano")
+            DisplayChatText("4")
             coroutine.yield(CoroutineYields.WaitForSeconds, 20)
-            VDSetRoute("WDC_H", "WDC_Akps", VDOrderType.Substitute)
+            DisplayChatText("0")
+            VDSetRoute("WDC_H", "WDC_Akps", VDOrderType.TrainRoute)
         end)
     end
 })
 
+---sygnal wyjazdowy zachodnia
+CreateSignalTrigger(FindSignal("WZD_J23"), 1500, {
+    check = UnconditialCheck,
+    result = function(e)
+        CreateCoroutine(function()
+            coroutine.yield(CoroutineYields.WaitForTrainsetPassengerExchangeFinished, RailstockGetPlayerTrainset(), TimeSpanCreate(0, 0, 0, 10, 0))
+            VDSetRoute("WZD_J23", "WZD_Okps", VDOrderType.TrainRoute)
+            coroutine.yield(CoroutineYields.WaitForSeconds, 7)
+            DisplayChatText("0")
+        end)
+    end
+})
+
+---sygnal wjazdowy wlochy
+CreateSignalTrigger(FindSignal("Wl_C"), 2000, {
+    check = UnconditialCheck,
+    result = function(e)
+        CreateCoroutine(function()
+            VDSetRoute("Wl_C", "Wl_M", VDOrderType.TrainRoute)
+        end)
+    end
+})
+
+---sygnal wyjazdowy wlochy
+CreateSignalTrigger(FindSignal("Wl_M"), 150, {
+    check = UnconditialCheck,
+    result = function(e)
+        CreateCoroutine(function()
+            coroutine.yield(CoroutineYields.WaitForTrainsetPassengerExchangeFinished, RailstockGetPlayerTrainset(), TimeSpanCreate(0, 0, 0, 15, 0))
+            VDSetRoute("Wl_M", "Wl_Tkps", VDOrderType.TrainRoute)
+            coroutine.yield(CoroutineYields.WaitForSeconds, 13)
+            DisplayChatText("0")
+        end)
+    end
+})
+
+---wyjazd ursus
+CreateSignalTrigger(FindSignal("L447_101"), 1000, {
+    check = UnconditialCheck,
+    result = function(e)
+        CreateCoroutine(function()
+            coroutine.yield(CoroutineYields.WaitForTrainsetPassengerExchangeFinished, RailstockGetPlayerTrainset(), TimeSpanCreate(0, 0, 0, 2, 0))
+            DisplayChatText("0")
+        end)
+    end
+})
+
+---wyjazd ursus niedzwiadek
+CreateSignalTrigger(FindSignal("L447_117"), 1250, {
+    check = UnconditialCheck,
+    result = function(e)
+        CreateCoroutine(function()
+            coroutine.yield(CoroutineYields.WaitForTrainsetPassengerExchangeFinished, RailstockGetPlayerTrainset(), TimeSpanCreate(0, 0, 0, 2, 0))
+            DisplayChatText("0")
+        end)
+    end
+})
+
+---wyjazd piastow
+CreateSignalTrigger(FindSignal("L447_127"), 330, {
+    check = UnconditialCheck,
+    result = function(e)
+        CreateCoroutine(function()
+            coroutine.yield(CoroutineYields.WaitForTrainsetPassengerExchangeFinished, RailstockGetPlayerTrainset(), TimeSpanCreate(0, 0, 0, 2, 0))
+            DisplayChatText("0")
+        end)
+    end
+})
+
+---sygnal wjazdowy pruszkow
+CreateSignalTrigger(FindSignal("Pr_B"), 1500, {
+    check = UnconditialCheck,
+    result = function(e)
+        CreateCoroutine(function()
+            VDSetRouteWithVariant("Pr_B", "Pr_L3", VDOrderType.TrainRoute, {
+                GetMidPointVariant("Pr_3", false),
+                GetMidPointVariant("Pr_4", true),
+                GetMidPointVariant("Pr_6", true),
+                GetMidPointVariant("Pr_7", true),
+                GetMidPointVariant("Pr_10", true),
+                GetMidPointVariant("Pr_11", false),
+                GetMidPointVariant("Pr_21", false)
+            })
+        end)
+    end
+})
+
+---wyjazd pruszkow
+CreateSignalTrigger(FindSignal("Pr_Tm21"), 160, {
+    check = UnconditialCheck,
+    result = function(e)
+        CreateCoroutine(function()
+            coroutine.yield(CoroutineYields.WaitForTrainsetPassengerExchangeFinished, RailstockGetPlayerTrainset(), TimeSpanCreate(0, 0, 0, 2, 0))
+            DisplayChatText("0")
+        end)
+    end
+})
+
+---sygnal wjazdowy parzniew
+CreateSignalTrigger(FindSignal("Pr_L3"), 1500, {
+    check = UnconditialCheck,
+    result = function(e)
+        CreateCoroutine(function()
+            VDSetRoute("Pr_L3", "Pr_Wkps", VDOrderType.TrainRoute)
+        end)
+    end
+})
+
+---wyjazd z parzniewa i rozkaz o zmieniejszenie predkosci do brwinowa todo
+
 
 end
+
+
+
+
 
 ---Wylapywanie zew3 i podawanie po tym semafora
 function OnPlayerRadioCall(trainsetInfo, radio_SelectionCall)
     Log("Call pressed in " .. trainsetInfo.name .. ". Call type: " .. tostring(radio_SelectionCall))
     if(ScenarioStep == "VDStart") then
         CreateCoroutine(function ()
-            DisplayChatText("19962: Pociąg 19962 gotowy do manewrów w perony")
+            DisplayChatText("1")
             coroutine.yield(CoroutineYields.WaitForSeconds, 5)
-            DisplayChatText("Dyzurny: 19962 tarcza manewrowa podana")
+            DisplayChatText("2")
             coroutine.yield(CoroutineYields.WaitForSeconds, 10)
             VDSetRoute("WSD_Tm81", "WSD_J10", VDOrderType.ManeuverRoute)
             Log("Finished scenario step: " .. ScenarioStep)
             ScenarioStep = "Wwaw_Start"
             Log("started Scenario step: " .. ScenarioStep)
         end)
+---sygnal wjazdowy zachodnia
+    if(ScenarioStep == "Wwaw_Start") then
+        CreateCoroutine(function ()
+            DisplayChatText("5")       
+            coroutine.yield(CoroutineYields.WaitForSeconds, 5)
+            DisplayChatText("6")
+            coroutine.yield(CoroutineYields.WaitForSeconds, 8)      
+            VDSetRoute("WZD_C", "WZD_J23", VDOrderType.TrainRoute)                    
+            Log("Finished scenario step: " .. ScenarioStep)
+            ScenarioStep = "Wwaw_zachodnia"
+            Log("started Scenario step: " .. ScenarioStep)           
+        end)        
     end
-end
+    end
 
+end
 
 
 function UnconditialCheck(e)
     return true
 end
+
+function ScenarioStepinfo()
+    Log("aktualny status scenariusza: " .. ScenarioStep)    
+end
+
 
 
 function PerformUpdate()
