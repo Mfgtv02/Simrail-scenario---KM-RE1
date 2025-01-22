@@ -1,0 +1,26 @@
+---wybor pogody
+    CreateCoroutine(function()
+        ShowMessageBox("#M_Weather", {
+                ["Text"] = "#Sunny_Summer",
+                ["OnClick"] = function()
+                    SetStartDateTime(DateTimeCreate(2024, 06, 11, 6, 45, 00))
+                    SetWeather(WeatherConditionCode.ScatteredClouds, 20, 1000, 70, 3500, 10, 5, 5, true)
+                    Weather = 0
+                end,
+            }, {
+                ["Text"] = "#Rainy_Autumn",
+                ["OnClick"] = function()
+                    SetStartDateTime(DateTimeCreate(2024, 10, 28, 6, 45, 00))
+                    SetWeather(WeatherConditionCode.ModerateRain, 10, 1000, 70, 1500, 10, 5, 5, true)
+                    Weather = 1
+                end,
+            }, {
+                ["Text"] = "#Snowy_Winter",
+                ["OnClick"] = function()
+                    SetStartDateTime(DateTimeCreate(2024, 12, 28, 6, 45, 00))
+                    SetWeather(WeatherConditionCode.Snow, -10, 1000, 70, 1000, 10, 5, 5, true)
+                    Weather = 2
+                end,
+            }
+        )
+        coroutine.yield(CoroutineYields.WaitForSeconds, 1)
