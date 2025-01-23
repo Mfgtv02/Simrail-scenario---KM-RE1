@@ -1,5 +1,5 @@
 
-0=<color="grey">[Conductor]</color> <color="white">19962 ready to depart</color>
+0=<color="blue">[Conductor]</color> <color="white">19962 ready to depart</color>
 
 1=<color="yellow">[19962]</color> <color="white">19962 ready to maneuver to the platforms</color>
 2=<color="red">[Dispatcher]</color> <color="white">19962 shunting signal displayed</color>
@@ -9,3 +9,6 @@
 
 5=<color="yellow">[19962]</color> <color="white">19962 at the entry signal</color>
 6=<color="red">[Dispatcher]</color> <color="white">19962, I will set the route shortly</color>
+
+7=<color="red">[Dispatcher]</color> <color="white">19962, after completing passenger exchange, report for shunting</color>
+8=<color="yellow">[19962]</color> <color="white">Understood</color>

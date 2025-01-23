@@ -1,5 +1,5 @@
 
-0=<color="gray">[Konduktor]</color> <color="white">19962 gotów do odjazdu</color>
+0=<color="blue">[Konduktor]</color> <color="white">19962 gotów do odjazdu</color>
 
 1=<color="yellow">[19962]</color> <color="white">19962 gotowy do manewrów w perony</color>
 2=<color="red">[Dyżurny]</color> <color="white">19962 tarcza manewrowa podana</color>
@@ -9,6 +9,9 @@
 
 5=<color="yellow">[19962]</color> <color="white">19962 pod wjazdem</color>
 6=<color="red">[Dyżurny]</color> <color="white">19962 za chwilę podam przebieg</color>
+
+7=<color="red">[Dyżurny]</color> <color="white">19962 po skończeniu wymiany pasażerskiej zgłoś się do manewrów</color>
+8=<color="yellow">[19962]</color> <color="white">przjąłem</color>
 
 
 

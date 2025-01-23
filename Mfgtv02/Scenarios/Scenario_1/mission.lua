@@ -230,6 +230,81 @@ CreateSignalTrigger(FindSignal("Pr_L3"), 1500, {
 })
 
 ---wyjazd z parzniewa i rozkaz o zmieniejszenie predkosci do brwinowa todo
+CreateSignalTrigger(FindSignal("L447_193"), 750, {
+    check = UnconditialCheck,
+    result = function(e)
+        CreateCoroutine(function()
+            coroutine.yield(CoroutineYields.WaitForTrainsetPassengerExchangeFinished, RailstockGetPlayerTrainset(), TimeSpanCreate(0, 0, 0, 30, 0))
+            DisplayChatText("bedziemy jechac z mniejsza predkoscia do brwinowa z powodu zmniejszonej predkosci, zaraz podyktuje rozkaz")  
+            coroutine.yield(CoroutineYields.WaitForSeconds, 10)     
+            DisplayChatText("rozkaz")
+            coroutine.yield(CoroutineYields.WaitForSeconds, 5)  
+            DisplayChatText("przyjalem")
+            coroutine.yield(CoroutineYields.WaitForSeconds, 13)  
+            DisplayChatText("0")
+        end)
+    end
+})
+
+---wyjazd z brwinowa
+CreateSignalTrigger(FindSignal("L447_223"), 210, {
+    check = UnconditialCheck,
+    result = function(e)
+        CreateCoroutine(function()
+            coroutine.yield(CoroutineYields.WaitForTrainsetPassengerExchangeFinished, RailstockGetPlayerTrainset(), TimeSpanCreate(0, 0, 0, 2, 0))
+            DisplayChatText("0")
+        end)
+    end
+})
+
+---wyjazd z milanowka
+CreateSignalTrigger(FindSignal("L447_271"), 1050, {
+    check = UnconditialCheck,
+    result = function(e)
+        CreateCoroutine(function()
+            coroutine.yield(CoroutineYields.WaitForTrainsetPassengerExchangeFinished, RailstockGetPlayerTrainset(), TimeSpanCreate(0, 0, 0, 2, 0))
+            DisplayChatText("0")
+        end)
+    end
+})
+
+---wjazd do grodziska
+CreateSignalTrigger(FindSignal("Gr_B"), 2000, {
+    check = UnconditialCheck,
+    result = function(e)
+        CreateCoroutine(function()
+            VDSetRouteWithVariant("Gr_B", "Gr_M3", VDOrderType.TrainRoute, {
+                GetMidPointVariant("Gr_2", false),
+                GetMidPointVariant("Gr_4", true),
+                GetMidPointVariant("Gr_6", true),
+                GetMidPointVariant("Gr_7", false),
+                GetMidPointVariant("Gr_9", true),
+                GetMidPointVariant("Gr_13", true),
+                GetMidPointVariant("Gr_14", true),
+                GetMidPointVariant("Gr_17", true),
+                GetMidPointVariant("Gr_19", false)
+            })
+        end)
+    end
+})
+
+
+---sygnal wyjazdowy z grodziska do manewrów
+CreateSignalTrigger(FindSignal("Gr_M3"), 260, {
+    check = UnconditialCheck,
+    result = function(e)
+        CreateCoroutine(function()
+            coroutine.yield(CoroutineYields.WaitForTrainsetPassengerExchangeFinished, RailstockGetPlayerTrainset(), TimeSpanCreate(0, 0, 0, 30, 0))
+            DisplayChatText("7")     
+            coroutine.yield(CoroutineYields.WaitForSeconds, 5)
+            DisplayChatText("8")
+            coroutine.yield(CoroutineYields.WaitForSeconds, 23)      
+            DisplayChatText("0")
+        end)
+    end
+})
+
+
 
 
 end
@@ -269,16 +344,10 @@ function OnPlayerRadioCall(trainsetInfo, radio_SelectionCall)
 
 end
 
-
+---cos do trigerow xD
 function UnconditialCheck(e)
     return true
 end
-
-function ScenarioStepinfo()
-    Log("aktualny status scenariusza: " .. ScenarioStep)    
-end
-
-
 
 function PerformUpdate()
 

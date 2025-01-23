@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TimeTableStorage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <TrainName>R1</TrainName>
+  <TrainName>RE1</TrainName>
   <TrainNumber>19962</TrainNumber>
   <LineNumber>1</LineNumber>
   <From>Warszawa Wschodnia</From>
@@ -104,6 +104,7 @@
       <StationCategory />
       <ArrivalTime>1860</ArrivalTime>
       <DepartureTime>2400</DepartureTime>
+      <MaxSpeed>30</MaxSpeed>
     </WayPointFromXml>
     <WayPointFromXml>
       <NameOfPoint>Brwinów</NameOfPoint>
