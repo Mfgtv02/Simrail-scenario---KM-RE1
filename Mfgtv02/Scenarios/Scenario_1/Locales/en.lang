@@ -1,4 +1,13 @@
 
+time=choose the time of day
+wschod_slonca=Early Morning
+noc=Night
+poludnie=Midday
+
+start1=Witaj, dzisiaj poprowadzisz pociąg osobowy kolei mazowieckich na trasie Warszawa Wschodnia - Grodzisk Mazowiecki
+start2=Następnie dołączysz 2 skład i pojedziesz na trasie Grodzisk Mazowiecki - Warszawa Wschodnia
+start3=Gdy będziesz gotowy do jazdy wywołaj dyżurnego
+
 0=<color="blue">[Conductor]</color> <color="white">19962 ready to depart</color>
 
 1=<color="yellow">[19962]</color> <color="white">19962 ready to maneuver to the platforms</color>

@@ -28,6 +28,7 @@ end
 --- Function to start the scenario
 function StartScenario()
     CreateCoroutine(function()
+---wybor pogody
         ShowMessageBox("#M_Weather", {
                 ["Text"] = "#Sunny_Summer",
                 ["OnClick"] = function()
@@ -55,7 +56,31 @@ function StartScenario()
             }
         )
         coroutine.yield(CoroutineYields.WaitForSeconds, 1)
-
+---wybor pory dnia
+        ShowMessageBox("time", {
+            ["Text"] = "wschod_slonca",
+            ["OnClick"] = function()
+                SetStartDateTime(DateTimeCreate(2024, 06, 11, 4, 17, 00))
+                Time = 0
+                Log("pora dnia ustawiona na wczesny ranek")
+            end,
+        }, {
+            ["Text"] = "noc",
+            ["OnClick"] = function()
+                SetStartDateTime(DateTimeCreate(2024, 10, 28, 2, 17, 00))
+                Time = 1
+                Log("pora dnia ustawiona na noc")
+            end,
+        }, {
+            ["Text"] = "poludnie",
+            ["OnClick"] = function()
+                SetStartDateTime(DateTimeCreate(2024, 12, 28, 12, 6, 00))
+                Time = 2
+                Log("pora dnia ustawiona na poludnie")
+            end,
+        }
+    )
+        coroutine.yield(CoroutineYields.WaitForSeconds, 1)
         Trains[0] = SpawnTrainsetOnSignal("player", FindSignal("WSD_Tm81"), 30, false, true, false, true, {
             CreateNewSpawnVehicleDescriptor(LocomotiveNames.EN76_022, false)
         })
@@ -66,10 +91,13 @@ function StartScenario()
         else
             Log("Failed to spawn player train.")
         end
+        coroutine.yield(CoroutineYields.WaitForSeconds, 10)
+        DisplayMessage("start1", 10)
+        coroutine.yield(CoroutineYields.WaitForSeconds, 10)        
+        DisplayMessage("start2", 10)
+        coroutine.yield(CoroutineYields.WaitForSeconds, 10)
+        DisplayMessage("start3", 10)
 
-        coroutine.yield(CoroutineYields.WaitForSeconds, 3)
-
-        Log("Scenario step: " .. ScenarioStep)
     end)
 
 
@@ -89,7 +117,7 @@ function StartScenario()
                     GetMidPointVariant("WSD_2", false),
                     GetMidPointVariant("z1333", true)
                 })                
-                coroutine.yield(CoroutineYields.WaitForSeconds, 17)
+                coroutine.yield(CoroutineYields.WaitForSeconds, 18)
                 DisplayChatText("0")
             end)
         end
@@ -116,7 +144,7 @@ CreateSignalTrigger(FindSignal("WDC_H"), 1500, {
             DisplayChatText("4")
             coroutine.yield(CoroutineYields.WaitForSeconds, 20)
             DisplayChatText("0")
-            VDSetRoute("WDC_H", "WDC_Akps", VDOrderType.TrainRoute)
+            VDSetRoute("WDC_H", "WDC_Bkps", VDOrderType.Substitute)
         end)
     end
 })
@@ -321,13 +349,13 @@ function OnPlayerRadioCall(trainsetInfo, radio_SelectionCall)
             DisplayChatText("1")
             coroutine.yield(CoroutineYields.WaitForSeconds, 5)
             DisplayChatText("2")
-            coroutine.yield(CoroutineYields.WaitForSeconds, 10)
+            coroutine.yield(CoroutineYields.WaitForSeconds, 6)
             VDSetRoute("WSD_Tm81", "WSD_J10", VDOrderType.ManeuverRoute)
             Log("Finished scenario step: " .. ScenarioStep)
             ScenarioStep = "Wwaw_Start"
             Log("started Scenario step: " .. ScenarioStep)
         end)
----sygnal wjazdowy zachodnia
+    end
     if(ScenarioStep == "Wwaw_Start") then
         CreateCoroutine(function ()
             DisplayChatText("5")       
@@ -340,9 +368,11 @@ function OnPlayerRadioCall(trainsetInfo, radio_SelectionCall)
             Log("started Scenario step: " .. ScenarioStep)           
         end)        
     end
-    end
-
 end
+
+        
+
+
 
 ---cos do trigerow xD
 function UnconditialCheck(e)

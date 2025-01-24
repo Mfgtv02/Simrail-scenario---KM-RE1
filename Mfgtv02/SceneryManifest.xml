@@ -11,10 +11,10 @@
   <CustomTranslations>
     <CustomTranslation Key="ThumbnailTextKey">
       <Translations>
-        <CustomTranslationEntry LanguageTag="en">Thumbnail text in English</CustomTranslationEntry>
+        <CustomTranslationEntry LanguageTag="en">Scenario Pack By Mfgtv02</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="fr">Thumbnail text in French</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="de">Thumbnail  text in German</CustomTranslationEntry>
-        <CustomTranslationEntry LanguageTag="pl">Thumbnail text in Polish</CustomTranslationEntry>
+        <CustomTranslationEntry LanguageTag="pl">Paczka Scenariuszy By Mfgtv02</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="it">Thumbnail text in Italian</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="ru">Thumbnail text in Russian</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="es">Thumbnail text in Spanish</CustomTranslationEntry>
@@ -26,10 +26,10 @@
     </CustomTranslation>
     <CustomTranslation Key="HeaderText">
       <Translations>
-        <CustomTranslationEntry LanguageTag="en">Header text in English</CustomTranslationEntry>
+        <CustomTranslationEntry LanguageTag="en">Pack By Mfgtv02</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="fr">Header text in French</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="de">Header text in German</CustomTranslationEntry>
-        <CustomTranslationEntry LanguageTag="pl">Header text in Polish</CustomTranslationEntry>
+        <CustomTranslationEntry LanguageTag="pl">Paczka By Mfgtv02</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="it">Header text in Italian</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="ru">Header text in Russian</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="es">Header text in Spanish</CustomTranslationEntry>
@@ -41,10 +41,10 @@
     </CustomTranslation>
     <CustomTranslation Key="LocationNameKey">
       <Translations>
-        <CustomTranslationEntry LanguageTag="en">Location name text in English</CustomTranslationEntry>
+        <CustomTranslationEntry LanguageTag="en">Linia Kolejowa Nr.1</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="fr">Location name text in French</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="de">Location name text in German</CustomTranslationEntry>
-        <CustomTranslationEntry LanguageTag="pl">Location name text in Polish</CustomTranslationEntry>
+        <CustomTranslationEntry LanguageTag="pl">Linia Kolejowa Nr. 1</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="it">Location name text in Italian</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="ru">Location name  text in Russian</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="es">Location name text in Spanish</CustomTranslationEntry>
@@ -59,7 +59,7 @@
         <CustomTranslationEntry LanguageTag="en">Scenery description text in English</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="fr">Scenery description in French</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="de">Scenery description in German</CustomTranslationEntry>
-        <CustomTranslationEntry LanguageTag="pl">Scenery description in Polish</CustomTranslationEntry>
+        <CustomTranslationEntry LanguageTag="pl">Pierwsze wydanie paczki scenariuszy by Mfgtv02, aktualnie paczka zawiera jeden scenariusz</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="it">Scenery description in Italian</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="ru">Scenery description in Russian</CustomTranslationEntry>
         <CustomTranslationEntry LanguageTag="es">Scenery description in Spanish</CustomTranslationEntry>

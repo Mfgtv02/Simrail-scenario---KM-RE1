@@ -2,20 +2,20 @@
 <ScenarioManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Required_Level>1</Required_Level>
   <Train_Type>Cargo</Train_Type>
-  <Scenario_Name>SceneryNameText</Scenario_Name>
+  <Scenario_Name>RE1 Wschodnia-Grodzisk</Scenario_Name>
   <Train_Engine_Names>
     <string>E186</string>
   </Train_Engine_Names>
   <Train_Car_Names />
   <Scenario_Start_Time>2021-06-05T19:00:00</Scenario_Start_Time>
-  <Scenario_Lenght>30</Scenario_Lenght>
-  <Difficulty>1</Difficulty>
+  <Scenario_Lenght>90</Scenario_Lenght>
+  <Difficulty>3</Difficulty>
   <TrackLenghtInMeters>2000</TrackLenghtInMeters>
   <SeasonOfTheYear>Summer</SeasonOfTheYear>
   <HeaderText>HeaderText</HeaderText>
   <SubHeaderText>SubHeaderText</SubHeaderText>
   <MapFile>Map.png</MapFile>
-  <MainThumbnailPath>{Vehicle_Thumbnails}/E186-134.png</MainThumbnailPath>
+  <MainThumbnailPath>EN76-022.png</MainThumbnailPath>
   <MiniThumbnailPath1>minithumbnails/minithumbnail1.png</MiniThumbnailPath1>
   <MiniThumbnailPath2>minithumbnails/minithumbnail2.png</MiniThumbnailPath2>
   <MiniThumbnailPath3>minithumbnails/minithumbnail3.png</MiniThumbnailPath3>

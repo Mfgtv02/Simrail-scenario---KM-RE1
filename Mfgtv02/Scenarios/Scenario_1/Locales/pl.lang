@@ -1,4 +1,14 @@
 
+time=Wybierz porę dnia
+wschod_slonca=Wczesny Ranek
+noc=Noc
+poludnie=Południe
+
+start1=Witaj, dzisiaj poprowadzisz pociąg osobowy kolei mazowieckich na trasie Warszawa Wschodnia - Grodzisk Mazowiecki
+start2=Następnie dołączysz 2 skład i pojedziesz na trasie Grodzisk Mazowiecki - Warszawa Wschodnia
+start3=Gdy będziesz gotowy do jazdy wywołaj dyżurnego
+
+
 0=<color="blue">[Konduktor]</color> <color="white">19962 gotów do odjazdu</color>
 
 1=<color="yellow">[19962]</color> <color="white">19962 gotowy do manewrów w perony</color>
@@ -12,6 +22,8 @@
 
 7=<color="red">[Dyżurny]</color> <color="white">19962 po skończeniu wymiany pasażerskiej zgłoś się do manewrów</color>
 8=<color="yellow">[19962]</color> <color="white">przjąłem</color>
+
+
 
 
 
