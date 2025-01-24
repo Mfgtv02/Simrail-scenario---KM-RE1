@@ -58,8 +58,8 @@
       <Mileage>0</Mileage>
       <TrainType>ROJ</TrainType>
       <StationCategory />
-      <ArrivalTime>1020</ArrivalTime>
-      <DepartureTime>1200</DepartureTime>
+      <ArrivalTime>1740</ArrivalTime>
+      <DepartureTime>1760</DepartureTime>
     </WayPointFromXml>
     <WayPointFromXml>
       <NameOfPoint>Warszawa Ursus Niedźwiadek</NameOfPoint>
@@ -69,8 +69,8 @@
       <Mileage>0</Mileage>
       <TrainType>ROJ</TrainType>
       <StationCategory />
-      <ArrivalTime>1380</ArrivalTime>
-      <DepartureTime>1440</DepartureTime>
+      <ArrivalTime>1880</ArrivalTime>
+      <DepartureTime>1900</DepartureTime>
     </WayPointFromXml>
     <WayPointFromXml>
       <NameOfPoint>Piastów</NameOfPoint>
