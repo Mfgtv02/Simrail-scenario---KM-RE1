@@ -14,7 +14,7 @@
       <Mileage>0</Mileage>
       <TrainType>ROJ</TrainType>
       <StationCategory />
-      <ArrivalTime>360</ArrivalTime>
+      <ArrivalTime>300</ArrivalTime>
       <DepartureTime>420</DepartureTime>
     </WayPointFromXml>
     <WayPointFromXml>
@@ -25,8 +25,8 @@
       <Mileage>0</Mileage>
       <TrainType>ROJ</TrainType>
       <StationCategory />
-      <ArrivalTime>660</ArrivalTime>
-      <DepartureTime>720</DepartureTime>
+      <ArrivalTime>720</ArrivalTime>
+      <DepartureTime>960</DepartureTime>
     </WayPointFromXml>
     <WayPointFromXml>
       <NameOfPoint>Warszawa Zachodnia</NameOfPoint>
@@ -36,8 +36,8 @@
       <Mileage>0</Mileage>
       <TrainType>ROJ</TrainType>
       <StationCategory />
-      <ArrivalTime>780</ArrivalTime>
-      <DepartureTime>840</DepartureTime>
+      <ArrivalTime>1140</ArrivalTime>
+      <DepartureTime>1200</DepartureTime>
     </WayPointFromXml>
     <WayPointFromXml>
       <NameOfPoint>Warszawa Włochy</NameOfPoint>
@@ -47,8 +47,8 @@
       <Mileage>0</Mileage>
       <TrainType>ROJ</TrainType>
       <StationCategory />
-      <ArrivalTime>900</ArrivalTime>
-      <DepartureTime>900</DepartureTime>
+      <ArrivalTime>1560</ArrivalTime>
+      <DepartureTime>1620</DepartureTime>
     </WayPointFromXml>
     <WayPointFromXml>
       <NameOfPoint>Warszawa Ursus</NameOfPoint>
