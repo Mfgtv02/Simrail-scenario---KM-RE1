@@ -80,8 +80,8 @@
       <Mileage>0</Mileage>
       <TrainType>ROJ</TrainType>
       <StationCategory />
-      <ArrivalTime>1500</ArrivalTime>
-      <DepartureTime>1560</DepartureTime>
+      <ArrivalTime>2020</ArrivalTime>
+      <DepartureTime>2080</DepartureTime>
     </WayPointFromXml>
     <WayPointFromXml>
       <NameOfPoint>Pruszków</NameOfPoint>
@@ -91,8 +91,8 @@
       <Mileage>0</Mileage>
       <TrainType>ROJ</TrainType>
       <StationCategory />
-      <ArrivalTime>1680</ArrivalTime>
-      <DepartureTime>1740</DepartureTime>
+      <ArrivalTime>2200</ArrivalTime>
+      <DepartureTime>2260</DepartureTime>
     </WayPointFromXml>
     <WayPointFromXml>
       <NameOfPoint>Parzniew</NameOfPoint>
@@ -102,8 +102,8 @@
       <Mileage>0</Mileage>
       <TrainType>ROJ</TrainType>
       <StationCategory />
-      <ArrivalTime>1860</ArrivalTime>
-      <DepartureTime>2400</DepartureTime>
+      <ArrivalTime>2440</ArrivalTime>
+      <DepartureTime>2460</DepartureTime>
       <MaxSpeed>30</MaxSpeed>
     </WayPointFromXml>
     <WayPointFromXml>
@@ -114,8 +114,8 @@
       <Mileage>0</Mileage>
       <TrainType>ROJ</TrainType>
       <StationCategory />
-      <ArrivalTime>2580</ArrivalTime>
-      <DepartureTime>2640</DepartureTime>
+      <ArrivalTime>2640</ArrivalTime>
+      <DepartureTime>2660</DepartureTime>
     </WayPointFromXml>
     <WayPointFromXml>
       <NameOfPoint>Milanówek</NameOfPoint>
@@ -125,8 +125,8 @@
       <Mileage>0</Mileage>
       <TrainType>ROJ</TrainType>
       <StationCategory />
-      <ArrivalTime>2700</ArrivalTime>
-      <DepartureTime>2760</DepartureTime>
+      <ArrivalTime>2900</ArrivalTime>
+      <DepartureTime>2920</DepartureTime>
     </WayPointFromXml>
     <WayPointFromXml>
       <NameOfPoint>Grodzisk Mazowiecki</NameOfPoint>
@@ -136,8 +136,8 @@
       <Mileage>0</Mileage>
       <TrainType>ROJ</TrainType>
       <StationCategory />
-      <ArrivalTime>2880</ArrivalTime>
-      <DepartureTime>2940</DepartureTime>
+      <ArrivalTime>3100</ArrivalTime>
+      <DepartureTime>3160</DepartureTime>
     </WayPointFromXml>
   </WayPoints>
   <StartSpeedLimit>40</StartSpeedLimit>
