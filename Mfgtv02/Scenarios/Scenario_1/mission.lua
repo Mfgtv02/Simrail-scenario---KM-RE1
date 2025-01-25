@@ -90,7 +90,13 @@ function StartScenario()
             Trains[0].SetRadioChannel(2, true)
         else
             Log("Failed to spawn player train.")
+
         end
+        Trains[1] = SpawnTrainsetOnSignal("player2", FindSignal("Gr_M3"), 210, false, false, false, false, {
+            CreateNewSpawnVehicleDescriptor(LocomotiveNames.EN76_022, false)
+        })       
+
+
         coroutine.yield(CoroutineYields.WaitForSeconds, 10)
         DisplayMessage("start1", 10)
         coroutine.yield(CoroutineYields.WaitForSeconds, 10)        
@@ -145,6 +151,9 @@ CreateSignalTrigger(FindSignal("WDC_H"), 1500, {
             coroutine.yield(CoroutineYields.WaitForSeconds, 20)
             DisplayChatText("0")
             VDSetRoute("WDC_H", "WDC_Bkps", VDOrderType.Substitute)
+            Log("Finished scenario step: " .. ScenarioStep)
+            ScenarioStep = "Wwaw_Start"
+            Log("started Scenario step: " .. ScenarioStep)
         end)
     end
 })
@@ -163,11 +172,11 @@ CreateSignalTrigger(FindSignal("WZD_J23"), 1500, {
 })
 
 ---sygnal wjazdowy wlochy
-CreateSignalTrigger(FindSignal("Wl_C"), 2000, {
+CreateSignalTrigger(FindSignal("Wl_A"), 2000, {
     check = UnconditialCheck,
     result = function(e)
         CreateCoroutine(function()
-            VDSetRoute("Wl_C", "Wl_M", VDOrderType.TrainRoute)
+            VDSetRoute("Wl_A", "Wl_M", VDOrderType.TrainRoute)
         end)
     end
 })
@@ -237,22 +246,13 @@ CreateSignalTrigger(FindSignal("Pr_B"), 1500, {
 })
 
 ---wyjazd pruszkow
-CreateSignalTrigger(FindSignal("Pr_Tm21"), 160, {
+CreateSignalTrigger(FindSignal("Pr_L3"), 1000, {
     check = UnconditialCheck,
     result = function(e)
         CreateCoroutine(function()
             coroutine.yield(CoroutineYields.WaitForTrainsetPassengerExchangeFinished, RailstockGetPlayerTrainset(), TimeSpanCreate(0, 0, 0, 2, 0))
             DisplayChatText("0")
-        end)
-    end
-})
-
----sygnal wjazdowy parzniew
-CreateSignalTrigger(FindSignal("Pr_L3"), 1500, {
-    check = UnconditialCheck,
-    result = function(e)
-        CreateCoroutine(function()
-            VDSetRoute("Pr_L3", "Pr_Wkps", VDOrderType.TrainRoute)
+            VDSetRoute("Pr_L3", "Pr_Ykps", VDOrderType.TrainRoute)
         end)
     end
 })
@@ -301,7 +301,7 @@ CreateSignalTrigger(FindSignal("Gr_B"), 2000, {
     check = UnconditialCheck,
     result = function(e)
         CreateCoroutine(function()
-            VDSetRouteWithVariant("Gr_B", "Gr_M3", VDOrderType.TrainRoute, {
+            VDSetRouteWithVariant("Gr_B", "Gr_M4", VDOrderType.TrainRoute, {
                 GetMidPointVariant("Gr_2", false),
                 GetMidPointVariant("Gr_4", true),
                 GetMidPointVariant("Gr_6", true),
@@ -310,15 +310,19 @@ CreateSignalTrigger(FindSignal("Gr_B"), 2000, {
                 GetMidPointVariant("Gr_13", true),
                 GetMidPointVariant("Gr_14", true),
                 GetMidPointVariant("Gr_17", true),
-                GetMidPointVariant("Gr_19", false)
-            })
+                GetMidPointVariant("Gr_19", true),
+                GetMidPointVariant("Gr_22", true)
+            })            
+            Log("Finished scenario step: " .. ScenarioStep)
+            ScenarioStep = "Grodzisk"
+            Log("started Scenario step: " .. ScenarioStep)      
         end)
     end
 })
 
 
 ---sygnal wyjazdowy z grodziska do manewrów
-CreateSignalTrigger(FindSignal("Gr_M3"), 260, {
+CreateSignalTrigger(FindSignal("Gr_M4"), 260, {
     check = UnconditialCheck,
     result = function(e)
         CreateCoroutine(function()
@@ -332,7 +336,23 @@ CreateSignalTrigger(FindSignal("Gr_M3"), 260, {
     end
 })
 
-
+CreateSignalTrigger(FindSignal("Gr_P3"), 200, {
+    check = UnconditialCheck,
+    result = function(e)
+        CreateCoroutine(function()
+            DisplayChatText("Mozna sie juz zatrzymac, podaje semafor w perony tam czeka 2 elf")      
+            VDSetRouteWithVariant("Gr_Tm38", "Gr_N3", VDOrderType.ManeuverRoute, {
+                GetMidPointVariant("Gr_65", true),
+                GetMidPointVariant("Gr_62", true),
+                GetMidPointVariant("Gr_60", false),
+                GetMidPointVariant("Gr_57", false),
+                GetMidPointVariant("Gr_56", true),
+                GetMidPointVariant("Gr_55", true),
+                GetMidPointVariant("Gr_54", false)
+            })            
+        end)
+    end
+})
 
 
 end
@@ -351,9 +371,6 @@ function OnPlayerRadioCall(trainsetInfo, radio_SelectionCall)
             DisplayChatText("2")
             coroutine.yield(CoroutineYields.WaitForSeconds, 6)
             VDSetRoute("WSD_Tm81", "WSD_J10", VDOrderType.ManeuverRoute)
-            Log("Finished scenario step: " .. ScenarioStep)
-            ScenarioStep = "Wwaw_Start"
-            Log("started Scenario step: " .. ScenarioStep)
         end)
     end
     if(ScenarioStep == "Wwaw_Start") then
@@ -368,7 +385,27 @@ function OnPlayerRadioCall(trainsetInfo, radio_SelectionCall)
             Log("started Scenario step: " .. ScenarioStep)           
         end)        
     end
+    if(ScenarioStep == "Grodzisk") then
+        CreateCoroutine(function ()
+            DisplayChatText("5")       
+            coroutine.yield(CoroutineYields.WaitForSeconds, 5)
+            DisplayChatText("6")
+            coroutine.yield(CoroutineYields.WaitForSeconds, 8)      
+            VDSetRoute("Gr_M4", "Gr_O4", VDOrderType.ManeuverRoute)          
+            VDSetRouteWithVariant("Gr_O4", "Gr_P3", VDOrderType.ManeuverRoute, {
+                GetMidPointVariant("Gr_52", true),
+                GetMidPointVariant("Gr_54", true),
+                GetMidPointVariant("Gr_55", true),
+                GetMidPointVariant("Gr_56", true),
+                GetMidPointVariant("Gr_57", true),
+                GetMidPointVariant("Gr_59", true),
+                GetMidPointVariant("Gr_61", false),
+                GetMidPointVariant("Gr_65", false)
+            })            
+        end)        
+    end
 end
+
 
         
 
